@@ -1,0 +1,5 @@
+1) git clone HTTP Key: Clones the git repo to local machine.
+2) .git folder: to show .get folder in windows, enable hidden folder in file explorer. ls -la for linux for hidden files/folders
+3) git status: gives the status of files that are new added or files that are modified
+4) git add . : used to track new files. the '.' after add means to track all files in the folder.
+You can also specify file name after 'add' just to track that specific file
