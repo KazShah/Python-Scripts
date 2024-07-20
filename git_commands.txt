@@ -1,5 +1,31 @@
+Step-1: Creating local folder.
+
+First create a new folder in local machine and select that folder as working folder in VS code.
+
+Step-2: Cloning repo into the working folder. Tracking files and commiting changes to existing files.
+
 1) git clone HTTP Key: Clones the git repo to local machine.
 2) .git folder: to show .get folder in windows, enable hidden folder in file explorer. ls -la for linux for hidden files/folders
 3) git status: gives the status of files that are new added or files that are modified
 4) git add . : used to track new files. the '.' after add means to track all files in the folder.
 You can also specify file name after 'add' just to track that specific file
+5) git commit -m "xxx" -m "xxx" : first '-m' is for message that need to be added with each commit. second -m is for
+adding any description.
+6) git push: will push the cahnges to git. will ask for github login and password.
+
+SSH Keys
+
+Open Gitbash and enter below commands:
+1) ssh-keygen -t rsa -b 4096 -C "github email address" :Generates SSH Keys
+2) ls | grep testkey : testkey is the key name given in above command. press enter will generate keys with default names
+such as id_rsa and id_rsa.pub.  
+id_rsa.pub is the one that we will upload to your online github interface.
+3) cat ~/.ssh/id_rsa.pub: will display the public key. Copy and paste the text into online github SSH key section.
+Warning. dont share private with anybody.
+--Starting SSH Agent and add private key
+4)eval `ssh-agent.exe` : Starts ssh agent. eval Agent pid 15196: should display
+5) $ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /c/Users/kazim/.ssh/id_rsa:
+Identity added: /c/Users/kazim/.ssh/id_rsa (shah.kazim@gmail.com)
+
+git push via SSH:
