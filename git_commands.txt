@@ -4,7 +4,7 @@ First create a new folder in local machine and select that folder as working fol
 
 Step-2: Cloning repo into the working folder. Tracking files and commiting changes to existing files.
 
-1) git clone HTTP Key: Clones the git repo to local machine.
+1) git clone HTTP/ssh Key: Clones the git repo to local machine. For using ssh key you first have to setup ssh key in git bash.
 2) .git folder: to show .get folder in windows, enable hidden folder in file explorer. ls -la for linux for hidden files/folders
 3) git status: gives the status of files that are new added or files that are modified
 4) git add . : used to track new files. the '.' after add means to track all files in the folder.
@@ -29,3 +29,8 @@ Enter passphrase for /c/Users/kazim/.ssh/id_rsa:
 Identity added: /c/Users/kazim/.ssh/id_rsa (shah.kazim@gmail.com)
 
 git push via SSH:
+
+Branching:
+
+Forking:
+
