@@ -12,6 +12,7 @@ You can also specify file name after 'add' just to track that specific file
 5) git commit -m "xxx" -m "xxx" : first '-m' is for message that need to be added with each commit. second -m is for
 adding any description.
 6) git push: will push the cahnges to git. will ask for github login and password.
+7) git push via SSH: git push master origin. have to start ssh agent before this and generate SSh keys.
 
 SSH Keys
 
@@ -21,16 +22,34 @@ Open Gitbash and enter below commands:
 such as id_rsa and id_rsa.pub.  
 id_rsa.pub is the one that we will upload to your online github interface.
 3) cat ~/.ssh/id_rsa.pub: will display the public key. Copy and paste the text into online github SSH key section.
-Warning. dont share private with anybody.
+Warning: dont share private with anybody.
 --Starting SSH Agent and add private key
 4)eval `ssh-agent.exe` : Starts ssh agent. eval Agent pid 15196: should display
 5) $ ssh-add ~/.ssh/id_rsa
 Enter passphrase for /c/Users/kazim/.ssh/id_rsa:
 Identity added: /c/Users/kazim/.ssh/id_rsa (shah.kazim@gmail.com)
 
-git push via SSH:
+
+Local Repo push to Git:
+1) Create local folder with all the files you want to push to into repo on git hub.
+2) git init: initial a new repo on github.
+3) all commands are same as above for staus, tracking and commit.
+4) To push this changes to git, first have to create a new repo on Git hub with same name as local folder.
+5) Copy SSH link or HTTPs link and run command: git remote origin "ssh link"
+6) git remote -v :will show all remote repos that are being connected to our local repo.
+7) After connected, we can run git push origin master  
+Tip: we can run git push -u origin master: this command will set default upstream push. after running this, we can simply
+run git push and it will push the files to default branch.
 
 Branching:
+Branching is used to add an additional branch in origin so that we can work on that in parallel without exposing it to the 
+main branch. Its kind of a sandbox area where we can work on some features in parallel. This can be helpful in keeping some
+code seperate which can potentially break the main code. After testing, feature branch then can be merged to main branch.
+There is another branch called Hot Fix branch. This is used to fix bugs.
+1) git branch: will show the branchs we are have. the "*" shows which branch we are currently at.
+2) git checkout -b feature-name: will initial a new feature branch and switch to the new one.
+3) git checkout master: will switch back to master.
+4) git diff feature-name: compares two versions of code or what changes are made. 
 
 Forking:
 
